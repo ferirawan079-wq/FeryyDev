@@ -1,0 +1,10 @@
+{
+  "name": "feryydevv-deploy",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "dependencies": {
+    "adm-zip": "^0.5.9",
+    "node-fetch": "^2.6.7"
+  }
+}

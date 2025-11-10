@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FeryyDevv — Deploy Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="header">
+      <div class="brand"><span>FD</span></div>
+      <div>
+        <h1>FeryyDevv — Auto Deploy</h1>
+        <p class="muted">Upload ZIP hasil build → Deploy ke Vercel → Tampilkan link</p>
+      </div>
+    </header>
+
+    <main class="card">
+      <div class="grid">
+        <div>
+          <label>Project name</label>
+          <input id="projectName" placeholder="FeryyDevv" value="FeryyDevv">
+
+          <label>Custom domain (optional)</label>
+          <input id="customDomain" placeholder="FeryyDev.site" value="FeryyDev.site">
+
+          <label>Vercel Project Slug (optional)</label>
+          <input id="projectSlug" placeholder="project-slug (if you have one)">
+
+          <label>Choose ZIP build</label>
+          <input id="zipInput" type="file" accept=".zip">
+          <p class="hint">ZIP should contain static build folder (build/ or dist/).</p>
+
+          <div class="actions">
+            <button id="deployBtn">Upload & Deploy</button>
+            <button id="resetBtn" class="muted-btn">Reset</button>
+          </div>
+
+          <div class="status" id="status">Menunggu tindakan</div>
+          <progress id="progress" max="100" value="0" style="display:none"></progress>
+          <div id="result" class="result" style="display:none"></div>
+          <div id="error" class="error" style="display:none"></div>
+        </div>
+
+        <aside class="aside">
+          <h3>Petunjuk singkat</h3>
+          <ol>
+            <li>Deploy project ini di Vercel sebagai satu project (index.html + /api).</li>
+            <li>Set environment variable <code>VERCEL_TOKEN</code> di Vercel (Project → Settings → Environment Variables).</li>
+            <li>Buka halaman, pilih ZIP hasil build, klik <em>Upload & Deploy</em>.</li>
+            <li>Hasil deploy akan muncul sebagai link di bawah.</li>
+          </ol>
+
+          <h4>Keamanan</h4>
+          <p class="small">Jangan masukkan token di chat — simpan sebagai Environment Variable di dashboard Vercel.</p>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="foot">© FeryyDevv • Designed minimal & professional</footer>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
